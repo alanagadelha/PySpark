@@ -1,0 +1,253 @@
+<pyspark.sql.session.SparkSession object at 0x7f388962fef0>
+<class 'pyspark.sql.dataframe.DataFrame'>
+root
+ |-- nome: string (nullable = true)
+ |-- email: string (nullable = true)
+ |-- genero: string (nullable = true)
+ |-- endereco_ip: string (nullable = true)
+ |-- produto: string (nullable = true)
+ |-- quantidade: integer (nullable = true)
+ |-- valor: integer (nullable = true)
+ |-- moeda: string (nullable = true)
+ |-- vendedor_nome: string (nullable = true)
+ |-- hora: string (nullable = true)
+ |-- data: timestamp (nullable = true)
+
+
+
+Time start time in GLOBAL PROGRAM (hh:mm:ss.ms) is: 2022-12-05 13:13:09.357971
+
+
+=======================================================================
+Starting Query 1 - Qual o total de itens comprados por cada cliente?
++------------------+--------------------+----------+-----+
+|              nome|             produto|quantidade|count|
++------------------+--------------------+----------+-----+
+|    Harwell Corbyn|Beer - Sleemans H...|         5|    1|
+|     Ravid Mearing|       Truffle Paste|        58|    1|
+|      Bryan Dikles|          Sour Cream|        52|    1|
+|        Eb Johnson|Syrup - Monin - P...|        22|    1|
+|    Rickie Domange|Mushroom - King E...|        58|    1|
+|Elijah Brownbridge|Venison - Racks F...|        62|    1|
+|        Bax Storie|      Fennel - Seeds|        92|    1|
+|     Donal Linfoot| Bread Roll Foccacia|         7|    1|
+|      Leia Mabbitt|     Cup - 3.5ozFoam|        28|    1|
+|     Barbee Vawton|         Tofu - Firm|        27|    1|
+|  Georgia Strainge| Quail Eggs - Canned|        54|    1|
+|  Domenic Pendrill|The Pop Shoppe Pi...|        65|    1|
+|   Lanae Brazelton|          Emulsifier|        16|    1|
+|    Perl Crowcroft|   Pork Loin Cutlets|        33|    1|
+|     Rancell Flynn| Shopper Bag - S - 4|         1|    1|
+|  Jessamyn Jurczak|      Flour Dark Rye|        96|    1|
+|Cariotta Pettecrew|Sugar - BrownIndi...|         3|    1|
+|     Amberly Ayers|Tomato - Plum Wit...|        32|    1|
+|    Rogerio Gibbin|Wine - Alsace Gew...|        14|    1|
+|  Raffarty Kunkler|Veal - LegProvimi...|        29|    1|
+|      Bev Mangenot|         Sesame Seed|        69|    1|
+|     Terrill Stert|Flower - Dish Garden|        16|    1|
+|       Daffi Lyall|      Sugar - Invert|        61|    1|
+|      Lanae Duddin|Tea - Grapefruit ...|        45|    1|
+|    Susann McNevin|    Vegetable - Base|        94|    1|
+|     Cynthea Revie|      Cheese - Swiss|        60|    1|
+| Laurie Malletratt|Chocolate - Chips...|        15|    1|
+|    Ripley Capaldi|The Pop Shoppe - ...|         5|    1|
+|      Neilla Eydel|  SpriteDiet - 355ml|        46|    1|
+|   Mirabel Horlock|               Guava|        38|    1|
+|     Evvie Dingley|Wine - Niagaravqa...|        92|    1|
+|      Lila Batisse|Soup - CampbellsL...|        77|    1|
+|  Oralla Lamartine| White Fish - Filets|        16|    1|
+|   Sarene Crabtree|Chocolate Bar - C...|        81|    1|
+|   Kearney Swannie|    Chicken - Livers|        57|    1|
+|     Ange Eykelhof|       Beans - Green|        50|    1|
+|Chickie McIlwreath|      Broom - Angled|         3|    1|
+|    Ceciley Naulls|Macaroons - Two B...|        75|    1|
+|   Victoir Banford|     Cabbage - Green|        76|    1|
+|  Curtice Geeraert|  Beef - BonesMarrow|        29|    1|
+|  Janet MacLachlan|  Nut - WalnutPieces|         6|    1|
+| Kyrstin Legonidec| Juice - Apple341 Ml|        83|    1|
+|  Sissie MacCaghan|Miso - Soy Bean P...|        22|    1|
+|Gerladina Trenouth|       Burger Veggie|        19|    1|
+|   Ferne Addeycott|Juice - Orange341 Ml|        89|    1|
+|   Gregor Radsdale|       Extract - Rum|        90|    1|
+| Rikki Middlehurst| Beef - KindneyWhole|        55|    1|
+|  Dalton Corneljes|    Roe - White Fish|        29|    1|
+|Gabriellia Cumesky|    Vegetable - Base|        42|    1|
+|  Lezlie Verbrugge|  Bread - BagelsMini|        68|    1|
++------------------+--------------------+----------+-----+
+only showing top 50 rows
+
++-------+-----------------+-----------------+------------------+
+|summary|             nome|          produto|        quantidade|
++-------+-----------------+-----------------+------------------+
+|  count|             5000|             5000|              5000|
+|   mean|             null|             null|           50.1168|
+| stddev|             null|             null|29.045596690331926|
+|    min|      Aarika Adan|   7up Diet355 Ml|                 1|
+|    max|Zondra Tremethack|Zucchini - Yellow|               100|
++-------+-----------------+-----------------+------------------+
+
+The start execution time of Query 1 is: 2022-12-05 13:13:12.891090
+The end execution time of Query 1 is: 2022-12-05 13:13:14.208528
+Time taken in Query 1 (hh:mm:ss.ms) is 0:00:01.317438
+=======================================================================
+=======================================================================
+Starting Query 2 - Qual o valor total vendido por loja por mês/ano?
++---------------+-------------------+----+-----+
+|    endereco_ip|               data|year|month|
++---------------+-------------------+----+-----+
+|   0.129.75.123|2019-12-31 00:00:00|2019|   12|
+|  86.212.29.223|2020-01-28 00:00:00|2020|    1|
+|   52.85.92.250|2020-01-01 00:00:00|2020|    1|
+|  111.54.196.58|2020-08-07 00:00:00|2020|    8|
+|   135.89.54.41|2020-02-05 00:00:00|2020|    2|
+|214.169.180.152|2019-10-27 00:00:00|2019|   10|
+|   71.70.52.130|2020-04-02 00:00:00|2020|    4|
+|155.181.171.185|2019-11-24 00:00:00|2019|   11|
+| 129.253.11.254|2020-04-14 00:00:00|2020|    4|
+|  45.46.246.198|2019-11-26 00:00:00|2019|   11|
+| 140.201.73.180|2019-12-16 00:00:00|2019|   12|
+| 96.211.236.175|2020-08-30 00:00:00|2020|    8|
+|  89.251.208.80|2019-11-11 00:00:00|2019|   11|
+|156.128.214.163|2020-02-25 00:00:00|2020|    2|
+| 216.179.87.155|2020-11-05 00:00:00|2020|   11|
+|  227.150.26.84|2020-09-25 00:00:00|2020|    9|
+| 84.200.227.191|2020-08-21 00:00:00|2020|    8|
+|  51.144.22.137|2020-06-07 00:00:00|2020|    6|
+| 74.228.187.178|2020-09-09 00:00:00|2020|    9|
+|   69.0.213.203|2020-09-28 00:00:00|2020|    9|
+| 77.152.138.231|2020-06-08 00:00:00|2020|    6|
+| 109.195.57.113|2020-04-18 00:00:00|2020|    4|
+|   117.245.9.37|2019-10-30 00:00:00|2019|   10|
+|104.214.218.173|2020-05-30 00:00:00|2020|    5|
+|     142.6.6.76|2020-09-07 00:00:00|2020|    9|
+|242.189.218.158|2019-05-12 00:00:00|2019|    5|
+|131.145.129.121|2020-02-13 00:00:00|2020|    2|
+|  225.203.94.48|2020-10-10 00:00:00|2020|   10|
+|   90.44.119.39|2020-01-01 00:00:00|2020|    1|
+| 129.77.253.196|2020-06-22 00:00:00|2020|    6|
+| 238.213.41.187|2020-06-21 00:00:00|2020|    6|
+|   89.78.227.10|2020-04-07 00:00:00|2020|    4|
+|     22.71.46.2|2020-10-03 00:00:00|2020|   10|
+|   71.63.151.54|2020-01-09 00:00:00|2020|    1|
+| 57.199.121.252|2020-07-21 00:00:00|2020|    7|
+| 55.167.157.107|2020-02-18 00:00:00|2020|    2|
+|     27.2.99.49|2019-08-11 00:00:00|2019|    8|
+| 220.169.220.16|2019-10-25 00:00:00|2019|   10|
+| 157.72.240.113|2020-03-16 00:00:00|2020|    3|
+|   92.186.86.85|2020-05-30 00:00:00|2020|    5|
+| 138.174.49.228|2019-10-15 00:00:00|2019|   10|
+| 126.71.109.240|2019-02-11 00:00:00|2019|    2|
+| 140.65.161.192|2020-02-02 00:00:00|2020|    2|
+| 254.235.79.161|2019-02-12 00:00:00|2019|    2|
+|  204.166.86.12|2019-12-29 00:00:00|2019|   12|
+| 199.240.97.138|2020-07-09 00:00:00|2020|    7|
+| 159.172.220.48|2020-04-19 00:00:00|2020|    4|
+| 203.201.160.38|2020-10-10 00:00:00|2020|   10|
+| 74.201.173.204|2020-08-30 00:00:00|2020|    8|
+|204.145.198.206|2019-12-10 00:00:00|2019|   12|
++---------------+-------------------+----+-----+
+only showing top 50 rows
+
+The start execution time of Query 2 is: 2022-12-05 13:13:14.208565
+The end execution time of Query 2 is: 2022-12-05 13:13:14.335561
+Time taken in Query 2 (hh:mm:ss.ms) is 0:00:00.126996
+=======================================================================
+=======================================================================
+Starting Query 3 - Qual o valor total vendido por cada vendedor em 2022
+ordenado por valor total vendido decrescente?
++-------------+----+-----+-----+
+|vendedor_nome|data|valor|count|
++-------------+----+-----+-----+
++-------------+----+-----+-----+
+
+The start execution time of Query 3 is: 2022-12-05 13:13:14.335593
+The end execution time of Query 3 is: 2022-12-05 13:13:14.820833
+Time taken in Query 3 (hh:mm:ss.ms) is 0:00:00.485240
+=======================================================================
+=======================================================================
+Starting Query 4 - Quais os produtos mais vendidos nos últimos 5 anos?
++--------------------+-------------------+----------+-----+
+|             produto|               data|quantidade|count|
++--------------------+-------------------+----------+-----+
+|      Petit Baguette|2020-04-19 00:00:00|       100|    1|
+|Soup - Base Broth...|2020-09-15 00:00:00|       100|    1|
+|Soup - CampbellsM...|2019-10-26 00:00:00|       100|    1|
+|Soup - Cream Of B...|2020-06-05 00:00:00|       100|    1|
+|     Chicken Giblets|2019-10-31 00:00:00|       100|    1|
+|Icecream - Dstk C...|2020-06-26 00:00:00|       100|    1|
+|Soupfoamcont12oz ...|2019-11-24 00:00:00|       100|    1|
+|  Eggs - Extra Large|2020-08-15 00:00:00|       100|    1|
+|Shiratamako - Ric...|2020-02-08 00:00:00|       100|    1|
+|Lentils - Green L...|2019-10-25 00:00:00|       100|    1|
+|Wine - RedPinot N...|2020-08-22 00:00:00|       100|    1|
+|Edible Flower - M...|2020-09-23 00:00:00|       100|    1|
+|       Duck - Breast|2020-02-16 00:00:00|       100|    1|
+|          Cornstarch|2020-07-25 00:00:00|       100|    1|
+|Croissants Thaw A...|2020-08-23 00:00:00|       100|    1|
+|Brownies - Two Bi...|2020-02-28 00:00:00|       100|    1|
+|Wine - Beringer F...|2019-11-25 00:00:00|       100|    1|
+|     Foil Cont Round|2019-10-17 00:00:00|       100|    1|
+|      Compound - Rum|2020-03-31 00:00:00|       100|    1|
+|Wine - Delicato M...|2020-09-26 00:00:00|       100|    1|
++--------------------+-------------------+----------+-----+
+only showing top 20 rows
+
++-------+-----------------+------------------+
+|summary|          produto|        quantidade|
++-------+-----------------+------------------+
+|  count|             4999|              4999|
+|   mean|             null|50.111622324464896|
+| stddev|             null|29.046194510035182|
+|    min|   7up Diet355 Ml|                 1|
+|    max|Zucchini - Yellow|               100|
++-------+-----------------+------------------+
+
+The start execution time of Query 4 is: 2022-12-05 13:13:14.820864
+The end execution time of Query 4 is: 2022-12-05 13:13:15.629449
+Time taken in Query 4 (hh:mm:ss.ms) is 0:00:00.808585
+=======================================================================
+=======================================================================
+Starting Query 5 - Quais os produtos menos vendidos nos últimos 5 anos?
++--------------------+-------------------+----------+-----+
+|             produto|               data|quantidade|count|
++--------------------+-------------------+----------+-----+
+|Salmon Steak - Co...|2019-02-11 00:00:00|         1|    1|
+|   Cranberries - Dry|2019-10-12 00:00:00|         1|    1|
+| Crab - Claws26 - 30|2020-01-16 00:00:00|         1|    1|
+|  Rappini - Andy Boy|2020-08-14 00:00:00|         1|    1|
+|         Maple Syrup|2019-05-12 00:00:00|         1|    1|
+|Table Cloth 62x12...|2020-04-29 00:00:00|         1|    1|
+|Wine - Masi Valpo...|2020-05-27 00:00:00|         1|    1|
+|Longos - Penne Wi...|2020-06-27 00:00:00|         1|    1|
+|Soup - Base Broth...|2020-06-27 00:00:00|         1|    1|
+|             Tumeric|2020-10-02 00:00:00|         1|    1|
+|Turkey - BreastBo...|2019-07-12 00:00:00|         1|    1|
+|     Quiche Assorted|2020-09-16 00:00:00|         1|    1|
+|    Kirsch - Schloss|2020-03-30 00:00:00|         1|    1|
+| Coffee - BeansWhole|2020-01-25 00:00:00|         1|    1|
+|      Cinnamon Rolls|2020-10-04 00:00:00|         1|    1|
+|Appetizer - Chees...|2020-09-28 00:00:00|         1|    1|
+|Cookie Dough - Do...|2020-05-13 00:00:00|         1|    1|
+|Flour - Fast / Rapid|2019-09-11 00:00:00|         1|    1|
+|Artichoke - Botto...|2020-02-22 00:00:00|         1|    1|
+|Browning Caramel ...|2020-08-25 00:00:00|         1|    1|
++--------------------+-------------------+----------+-----+
+only showing top 20 rows
+
++-------+-----------------+------------------+
+|summary|          produto|        quantidade|
++-------+-----------------+------------------+
+|  count|             4999|              4999|
+|   mean|             null|50.111622324464896|
+| stddev|             null|29.046194510035182|
+|    min|   7up Diet355 Ml|                 1|
+|    max|Zucchini - Yellow|               100|
++-------+-----------------+------------------+
+
+The start execution time of Query 5 is: 2022-12-05 13:13:15.629481
+The end execution time of Query 5 is: 2022-12-05 13:13:16.121592
+Time taken in Query 5 (hh:mm:ss.ms) is 0:00:00.492111
+=======================================================================
+
+
+Time taken in GLOBAL PROGRAM (hh:mm:ss.ms) is 0:00:06.763650
